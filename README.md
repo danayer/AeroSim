@@ -1088,8 +1088,7 @@ AeroSim EDU/
 ├── run_gui_phase6.py           # Запуск GUI (Phase 6)
 ├── requirements.txt            # Зависимости Python
 ├── package.json                # Конфигурация Node.js (если используется)
-├── README.md                   # Основная документация
-└── COMPLETE_DOCUMENTATION.md   # Эта документация
+└── README.md                   # Эта документация
 ```
 
 ---
