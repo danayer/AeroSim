@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-11-23T23:39:56.504379",
+  "statistics": {
+    "total_aircraft": 0,
+    "total_passengers": 0,
+    "total_delays": 0.0,
+    "total_events_processed": 10,
+    "events_by_type": {
+      "aircraft_arrival": 5,
+      "baggage_unload": 5
+    }
+  }
+}

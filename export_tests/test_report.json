@@ -1,0 +1,58 @@
+{
+  "export_time": "2025-11-24T12:29:49.293002",
+  "export_format": "JSON",
+  "simulation_data": {
+    "total_events_processed": 15423,
+    "total_aircraft": 87,
+    "total_passengers": 4521,
+    "simulation_time": 3600.5,
+    "throughput": 87.0,
+    "avg_service_time": 41.43,
+    "runway_utilization": 68.5,
+    "gate_utilization": 72.3,
+    "average_utilization": 70.4,
+    "mode": "Идеальное управление",
+    "total_delays": 12,
+    "luggage_queue_size": 45,
+    "security_queue_size": 23,
+    "luggage_utilization": 65.5,
+    "security_utilization": 48.2,
+    "staff_utilization": 52.0,
+    "baggage_utilization": 34.0,
+    "terminal_utilization": 68.0,
+    "avg_wait_time": 6.8,
+    "avg_delay_time": 0.45,
+    "terminal_id": "T1",
+    "terminal_stats": {
+      "passengers_processed": 4521,
+      "flights_handled": 87,
+      "avg_passengers_per_flight": 52,
+      "queue_efficiency": 0.85
+    },
+    "airport_economics": {
+      "total_flights": 87,
+      "commuter_flights": 45,
+      "international_flights": 42,
+      "total_revenue": 678150.0,
+      "first_class_revenue": 169537.5,
+      "coach_revenue": 508612.5,
+      "total_costs": 150000.0,
+      "total_profit": 528150.0,
+      "roi_percentage": 352.1,
+      "total_passengers_served": 4521,
+      "first_class_passengers": 1125,
+      "coach_passengers": 3396,
+      "average_load_factor": 0.85,
+      "average_revenue_per_flight": 7795.4,
+      "average_profit_per_flight": 6073.56,
+      "first_class_revenue_pct": 25.0,
+      "coach_revenue_pct": 75.0
+    }
+  },
+  "metadata": {
+    "total_events": 15423,
+    "total_aircraft": 87,
+    "total_passengers": 4521,
+    "simulation_time": 3600.5
+  }
+}

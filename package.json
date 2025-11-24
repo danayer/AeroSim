@@ -1,0 +1,15 @@
+{
+  "name": "AeroSim EDU",
+  "version": "1.0.0",
+  "description": "Симулятор аэропорта для образовательных целей",
+  "author": "AeroSim EDU Team",
+  "license": "MIT",
+  "python_requires": ">=3.8",
+  "keywords": [
+    "simulation",
+    "airport",
+    "discrete-event",
+    "education",
+    "modeling"
+  ]
+}
