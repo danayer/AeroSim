@@ -1225,7 +1225,7 @@ A:
 ### Контакты
 
 - **GitHub Issues:** [Ссылка на issues](https://github.com/project/issues)
-- **Email:** support@aerosim.edu
+- **Email:** danayerofficial@yandex.ru
 - **Документация:** [docs/](docs/)
 
 ---
