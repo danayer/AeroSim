@@ -580,25 +580,34 @@ class AirportSimulator:
         stats['terminal_utilization'] = max(0, min(100, terminal_util))
         
         # ФАЗА 6: Добавить экономическую статистику
-        # Все расчеты уже обновляются в процессе симуляции, просто экспортируем
+        # Используем реальные данные из airport_economics, которые накапливаются во время симуляции
+        total_revenue = self.airport_economics.total_passenger_revenue
+        total_costs = self.airport_economics.total_costs
+        total_profit = self.airport_economics.total_profit
+        roi_pct = self.airport_economics.roi_percentage
+        
+        # Рассчитать процент доходов по классам
+        first_class_pct = (self.airport_economics.first_class_revenue / total_revenue * 100) if total_revenue > 0 else 0
+        coach_pct = (self.airport_economics.coach_revenue / total_revenue * 100) if total_revenue > 0 else 0
+        
         stats['airport_economics'] = {
             'total_flights': self.airport_economics.total_flights,
             'commuter_flights': self.airport_economics.commuter_flights,
             'international_flights': self.airport_economics.international_flights,
-            'total_revenue': max(stats.get('total_passengers', 0) * 150, self.airport_economics.total_passenger_revenue),  # $150 за пассажира
-            'first_class_revenue': max(stats.get('total_passengers', 0) * 50, self.airport_economics.first_class_revenue),  # $50 за first class
-            'coach_revenue': max(stats.get('total_passengers', 0) * 100, self.airport_economics.coach_revenue),  # $100 за coach
-            'total_costs': max((elapsed_time * 100), self.airport_economics.total_costs),  # $100 за секунду операционных расходов
-            'total_profit': max((stats.get('total_passengers', 0) * 80), self.airport_economics.total_profit),  # $80 базовой прибыли за пассажира
-            'roi_percentage': self.airport_economics.roi_percentage if self.airport_economics.total_costs > 0 else 0,
-            'total_passengers_served': self.airport_economics.total_passengers_served + stats.get('total_passengers', 0),
+            'total_revenue': total_revenue,  # Реальный доход от билетов
+            'first_class_revenue': self.airport_economics.first_class_revenue,
+            'coach_revenue': self.airport_economics.coach_revenue,
+            'total_costs': total_costs,  # Реальные эксплуатационные расходы
+            'total_profit': total_profit,  # Реальная прибыль
+            'roi_percentage': roi_pct,  # Реальный ROI
+            'total_passengers_served': self.airport_economics.total_passengers_served,
             'first_class_passengers': self.airport_economics.first_class_passengers,
             'coach_passengers': self.airport_economics.coach_passengers,
             'average_load_factor': self.airport_economics.average_load_factor,
             'average_revenue_per_flight': self.airport_economics.average_revenue_per_flight,
             'average_profit_per_flight': self.airport_economics.average_profit_per_flight,
-            'first_class_revenue_pct': 25,  # 25% от First Class
-            'coach_revenue_pct': 75,  # 75% от Coach
+            'first_class_revenue_pct': first_class_pct,
+            'coach_revenue_pct': coach_pct,
         }
         
         # НОВОЕ: Добавить информацию об активных рейсах для мониторинга

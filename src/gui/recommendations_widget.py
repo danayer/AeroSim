@@ -176,8 +176,9 @@ class RecommendationsWidget(QWidget):
             )
         
         # Анализ доходов и экономики
-        profit = stats.get('total_profit', 0)
-        roi = stats.get('total_roi', 0)
+        econ_stats = stats.get('airport_economics', {})
+        profit = econ_stats.get('total_profit', 0)
+        roi = econ_stats.get('roi_percentage', 0)
         
         if roi < 100:
             recommendations.append(
